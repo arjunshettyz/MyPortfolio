@@ -284,35 +284,194 @@
   color: var(--text-primary);
 }
 
-/* Responsive Styles */
+/* Certificates Section Styles */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.certificate-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.certificate-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.certificate-card:hover .certificate-image img {
+  transform: scale(1.05);
+}
+
+.certificate-content {
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.certificate-content h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.certificate-issuer {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.certificate-date {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.certificate-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.certificate-link:hover {
+  background-color: #0056b3;
+}
+
+/* Slider Styles */
+.certificates-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.certificates-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.certificates-slide {
+  min-width: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  justify-content: center;
+}
+
+.certificate-card {
+  flex: 1;
+  min-width: 0;
+  max-width: calc((100% - 1rem) / 2);
+  margin: 0;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.slider-button:hover {
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.slider-button.prev {
+  left: 1rem;
+}
+
+.slider-button.next {
+  right: 1rem;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
 @media (max-width: 768px) {
-  .about-content {
+  .certificates-slide {
     flex-direction: column;
+    gap: 1.5rem;
   }
   
-  .about-image {
-    width: 100%;
+  .certificate-card {
+    min-width: 100%;
+    max-width: 100%;
   }
   
-  .resume-item-header {
-    flex-direction: column;
-    gap: 5px;
+  .slider-button {
+    width: 35px;
+    height: 35px;
   }
   
-  .certificate-list li {
-    flex-direction: column;
-    gap: 5px;
+  .slider-button.prev {
+    left: 0.5rem;
   }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .resume-block {
-    padding: 20px;
+  
+  .slider-button.next {
+    right: 0.5rem;
   }
 }
 
+/* Responsive Styles */
 @media screen and (max-width: 992px) {
   .about-content {
     grid-template-columns: 1fr;
@@ -325,5 +484,180 @@
   
   .about-info {
     justify-content: center;
+  }
+}
+
+/* Experience Image Styles */
+.experience-image-container {
+  width: 100%;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.experience-image-link {
+  display: inline-block;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.experience-image-link:hover {
+  transform: scale(1.02);
+}
+
+.experience-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.experience-image:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.view-certificate-container {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.view-certificate-link {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.view-certificate-link:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .experience-image-container {
+    margin: 1rem 0;
+  }
+  
+  .view-certificate-container {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+  }
+  
+  .view-certificate-link {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Skills Grid Layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 30px;
+  margin-top: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.skill-card {
+  background-color: var(--card-hover);
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color);
+}
+
+.skill-card-content {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card h4 {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
+.skill-card h4:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #2563eb;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.skill-icon {
+  font-size: 2.8rem;
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+.skill-tags {
+  margin-top: auto;
+}
+
+.skill-tag {
+  background-color: var(--card-background);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.skill-tag:hover {
+  background-color: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.skill-card.full-width {
+  grid-column: 1 / -1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    max-width: 500px;
+  }
+  
+  .skill-card {
+    padding: 25px;
+  }
+  
+  .skill-card.full-width {
+    max-width: 100%;
   }
 } 
