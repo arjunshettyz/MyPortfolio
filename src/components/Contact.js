@@ -61,7 +61,7 @@ const Contact = () => {
               </div>
               <div className="contact-details">
                 <h3>Location</h3>
-                <p>Mumbai, India</p>
+                <p>Hyderabad, India</p>
               </div>
             </div>
             <div className="contact-item">
