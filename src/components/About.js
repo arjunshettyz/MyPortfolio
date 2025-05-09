@@ -305,7 +305,7 @@ const About = () => {
                 <span className="resume-date">Since Aug 2023</span>
               </div>
               <p className="resume-subtitle">Lovely Professional University, Phagwara, Punjab</p>
-              <p>CGPA: 6.7</p>
+              <p>CGPA: 7</p>
             </div>
             
             <div className="resume-item">
